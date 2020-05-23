@@ -2,11 +2,22 @@
 
 {% block content %}
     <h2 style ="text-align:center;">{{ search | title}}</h2>
-    {% for post in final_postings  %}
-        <p>{{post.0}}</p>
-        <p>{{post.1}}</p>
-        {% if post.2 != 'N/A' %}
-            <p>{{post.2}}</p>
-        {% endif %}
-    {% endfor %}
+    <div class="row">
+        {% for post in final_postings  %}
+            <div class ="col s4">
+                <div class = "card">
+                    <div class = "card-image">
+                        <a href ="{{ post.1 }}"><img src = "{{post.3}}" alt ="{{ post.0 }}"></a>
+                    </div>
+                    <div class= "card-content">
+                        <p>{{post.0}}</p>
+                    </div>
+                    <div class = "card-action">
+                        <a href ="{{post.1}}">View</a>
+                    </div>
+                </div>
+            </div>
+            
+        {% endfor %}
+    </div>
 {% endblock content %}
