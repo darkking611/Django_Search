@@ -2,4 +2,11 @@
 
 {% block content %}
     <h2 style ="text-align:center;">{{ search | title}}</h2>
+    {% for post in final_postings  %}
+        <p>{{post.0}}</p>
+        <p>{{post.1}}</p>
+        {% if post.2 != 'N/A' %}
+            <p>{{post.2}}</p>
+        {% endif %}
+    {% endfor %}
 {% endblock content %}
